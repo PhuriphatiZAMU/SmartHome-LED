@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Lightbulb, Power, Wifi, Activity, Zap } from 'lucide-react';
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
-// --- CONFIGURATION ---
-const DB_URL = "https://iotproject-10b6f-default-rtdb.firebaseio.com";
-const DB_SECRET = "QRZHJdbKhU3FcZpFmTbIQANAKQL5mPHFqZFoElhc"; // Note: In production, do not expose secrets on client side.
+const DB_URL = import.meta.env.VITE_DB_URL;
+const DB_SECRET = import.meta.env.VITE_DB_SECRET;
 const LIGHT_STATUS_PATH = '/home/light/status';
 
 export default function App() {
@@ -72,6 +72,7 @@ export default function App() {
 
     return (
         <div className={`min-h-screen w-full flex items-center justify-center p-4 transition-colors duration-500 ${isOn ? 'bg-slate-900' : 'bg-slate-950'}`}>
+            <SpeedInsights />
 
             {/* Main Dashboard Card */}
             <div className="w-full max-w-md bg-slate-800 rounded-3xl shadow-2xl overflow-hidden border border-slate-700 relative">
