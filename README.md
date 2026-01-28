@@ -2,6 +2,8 @@
 
 A complete IoT Smart Home system that allows you to control lighting via a **Web Dashboard** or **Hand Gestures** (Ultrasonic Sensor). The system stays synchronized in real-time across all devices using Firebase and sends status notifications via **Telegram**.
 
+> **🎓 Note:** This is a mini-project developed for the **Microprocessor and Internet of Things** course.
+
 ## ✨ Features
 
 * **Dual Control:** Toggle the LED remotely via the React Web App or locally using hand waves (Ultrasonic Sensor).
@@ -9,6 +11,13 @@ A complete IoT Smart Home system that allows you to control lighting via a **Web
 * **Smart Alerts:** Receive **Telegram notifications** whenever the light is toggled, specifying the source (e.g., "Light ON (via Web App)").
 * **Modern Dashboard:** Responsive UI built with React, Tailwind CSS, and Lucide Icons.
 * **Connection Status:** Live indicator showing if the dashboard is connected to the cloud.
+
+---
+
+## 👥 Contributors
+
+* **Phuriphat Hemakul** - [GitHub Profile](https://github.com/PhuriphatiZAMU)
+* **Kitkhachon Chirawongrungrueang** - [GitHub Profile](https://github.com/Kitkhachon-xx)
 
 ---
 
@@ -35,7 +44,7 @@ A complete IoT Smart Home system that allows you to control lighting via a **Web
 
 | Component | ESP8266 Pin | Description |
 | --- | --- | --- |
-| **HC-SR04jw Trig** | `D5` | Ultrasonic Trigger |
+| **HC-SR04 Trig** | `D5` | Ultrasonic Trigger |
 | **HC-SR04 Echo** | `D6` | Ultrasonic Echo |
 | **LED (+)** | `D7` | Light Output (Anode) |
 | **LED (-)** | `GND` | Ground |
@@ -113,7 +122,8 @@ npm run dev
 ## 📡 Architecture
 
 1. **Web App:** Reads/Writes boolean status to `home/light/status` on Firebase.
-2. **ESP8266:** * Polls Firebase for changes to update the LED.
+2. **ESP8266:**
+* Polls Firebase for changes to update the LED.
 * Monitors the Ultrasonic sensor. If a hand is detected (distance 2-15cm), it toggles the state locally and pushes the update to Firebase.
 
 
@@ -135,3 +145,7 @@ smarthome-led/
 └── README.md          # Project Documentation
 
 ```
+
+## 🛡️ License
+
+This project is open-source and available under the [MIT License](https://www.google.com/search?q=LICENSE).
