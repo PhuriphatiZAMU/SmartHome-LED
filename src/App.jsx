@@ -82,7 +82,8 @@ export default function App() {
 
                 {/* Header */}
                 <div className="relative z-10 p-6 border-b border-slate-700 flex justify-between items-center bg-slate-800/80 backdrop-blur-sm">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-3">
+                        <img src="/smart-home-icon.png" alt="Smart Home" className="w-8 h-8 object-contain" />
                         <Zap className={`w-6 h-6 ${isOn ? 'text-yellow-400' : 'text-slate-400'}`} />
                         <h1 className="text-xl font-bold text-white tracking-wide">Smart Room</h1>
                     </div>
